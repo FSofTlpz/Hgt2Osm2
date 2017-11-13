@@ -152,11 +152,11 @@ namespace Hgt2Osm {
                         tmp = Convert.ToInt16(basename.Substring(1, 2));
                         if (basename[0] == 's')
                            tmp = -tmp;
-                        Lat.Add(tmp);
+                        Lon.Add(tmp);
                         tmp = Convert.ToInt16(basename.Substring(4, 3));
                         if (basename[3] == 'w')
                            tmp = -tmp;
-                        Lon.Add(tmp);
+                        Lat.Add(tmp);
                      }
                   }
                }
@@ -366,8 +366,8 @@ namespace Hgt2Osm {
          long LastID = FirstID;
          try {
 
-            Console.Error.WriteLine("==> Lese Ausgangsdaten {0}° {1}° ...", lat, lon);
-            HGTReader r = new HGTReader(lon, lat, opt.HGTPath);
+            Console.Error.WriteLine("==> Lese Ausgangsdaten Lat {0}° Lon {1}° ...", lat, lon);
+            HGTReader r = new HGTReader(lat, lon, opt.HGTPath);
 
             if (opt.OnlyGeoPng) {      // erzeugt nur ein georef. Bitmap
 
